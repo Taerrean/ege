@@ -5,7 +5,7 @@ def arrange_meetings(mass):
     while mass:
         every_end.append(mass[0]) if max(mass)[0] >= mass[0][1] else every_end.append(mass[-1])
         t = every_end[-1][1]
-        mass = [meet for meet in mass if meet[0] >= t and meet not in every_end]
+        mass = [meet for meet in mass if meet[0] >= t and meet != every_end[-1]]
     return [len(every_end), t]
 f = open('26_9756.txt')
 n = int(f.readline())
