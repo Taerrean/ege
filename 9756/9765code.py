@@ -1,4 +1,5 @@
 def arrange_meetings(mass):
+    mass.sort(key=lambda x: x[1])
     t = 0
     every_end = []
     while mass:
@@ -12,5 +13,4 @@ data = []
 for line in f:
     n, k = [int(k) for k in line.split()]
     data.append([n, k])
-data.sort(key= lambda x: x[1])
 print(arrange_meetings(data))
